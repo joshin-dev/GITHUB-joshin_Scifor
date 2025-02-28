@@ -1,0 +1,3 @@
+1.Easy to Learn and Use
+2.It is platform independant.
+3.Images,Audio,video can be uploaded into the webpage.

@@ -1,0 +1,1 @@
+MIME Means Multipurpose Internet Mail Extension.Which take care of transferring different kind of data through Electronic Mail Services.

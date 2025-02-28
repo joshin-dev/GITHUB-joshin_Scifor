@@ -1,0 +1,1 @@
+HTML means HyperText Markup Language.It is a combination of Hypertext and Markup Language.It is a standard language used to create webpage.It uses HTML tags and Attributes to describe structure and formatting of webpage.
