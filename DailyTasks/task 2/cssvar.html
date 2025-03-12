@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css variable</title>
+</head>
+<style>
+    :root {
+        --primary-color: red;
+        --secondary-color: green;
+        --heading-color: blue;
+        
+    }
+    div{
+        background-color: var(--secondary-color);
+        padding: 10px;  
+        height: 150px;
+        width: 200px;       
+    }
+    
+    h1 {
+        color: var(--heading-color);
+    }
+    
+    p {
+        color: var(--primary-color);
+    }   
+</style>
+<body>
+    <div>
+        <h1>this is heading</h1>
+        <p>This is paragraph</p>            
+    </div>
+</body>
+</html>
