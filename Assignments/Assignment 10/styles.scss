@@ -1,0 +1,26 @@
+$color1:rgb(148, 229, 148);
+$color2:white;
+$color3:rgb(29, 125, 60);
+body{
+    background-color: $color1;
+
+    nav{
+        background-color: $color3;
+    }
+    
+footer{
+        background-color: $color3;
+        padding: 20px;
+        text-align: center;
+    }
+    p{
+        color: $color2;
+    }
+    h1{
+        color: $color2;
+    }
+    h2{
+        color: $color2;
+    }
+
+}

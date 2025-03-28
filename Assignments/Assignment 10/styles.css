@@ -1,0 +1,20 @@
+body {
+  background-color: rgb(148, 229, 148);
+}
+body nav {
+  background-color: rgb(29, 125, 60);
+}
+body footer {
+  background-color: rgb(29, 125, 60);
+  padding: 20px;
+  text-align: center;
+}
+body p {
+  color: white;
+}
+body h1 {
+  color: white;
+}
+body h2 {
+  color: white;
+}/*# sourceMappingURL=styles.css.map */
