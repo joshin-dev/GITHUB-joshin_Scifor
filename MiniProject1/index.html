@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Online Store</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="Styles.css">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light ">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Beta</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Collections</a></li>
+        <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+        <!-- Bag Icon -->
+        <li class="nav-item ms-3">
+          <a class="nav-link position-relative" href="cart.html">
+            <i class="bi bi-bag fs-4"></i>
+            
+              <span class="visually-hidden">cart items</span>
+           
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Promo Banner -->
+<section class="promo-banner text-center py-3 bg-transparent">
+  <p class="mb-0 fw-bold">Get 10% off on any Products! Use Code: <span>BETA10</span></p>
+</section>
+
+<!-- Hero Section -->
+<header class="hero-section d-flex align-items-center text-center">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Discover the Best Deals</h1>
+    <p class="lead">Shop the latest Fashion with unbeatable prices</p>
+    <a href="shop.html" class="btn btn-primary btn-lg mt-3">Shop Now</a>
+  </div>
+</header>
+
+<!-- Featured Products -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">Featured Products</h2>
+    <div class="row g-4">
+      
+      <!-- Product 1 -->
+<div class="col-md-4">
+  <div class="card h-100 shadow-sm">
+    <img src="images/Pants.jpg" class="card-img-top" alt="Product 1">
+    <div class="card-body text-center">
+      <h5 class="card-title">Demon's Rage Baggy Pant</h5>
+      <p class="card-text"><strong>RS.1,099</strong>&nbsp; <del>RS.3,199</del></p>
+      <a href="cart.html" onclick="handleAddToCart('Demon\'s Rage Baggy Pant', 1099)" class="btn btn-outline-dark">Add to Cart</a>
+    </div>
+  </div>
+</div>
+
+<!-- Product 2 -->
+<div class="col-md-4">
+  <div class="card h-100 shadow-sm">
+    <img src="images/tshirt.jpg" class="card-img-top" alt="Product 2">
+    <div class="card-body text-center">
+      <h5 class="card-title">Necromancer Oversized T-Shirt</h5>
+      <p class="card-text"><strong>RS.999</strong>&nbsp; <del>RS.2,099</del></p>
+      <a href="cart.html" onclick="handleAddToCart('Necromancer Oversized T-Shirt', 999)" class="btn btn-outline-dark">Add to Cart</a>
+    </div>
+  </div>
+</div>
+
+<!-- Product 3 -->
+<div class="col-md-4 row-md-3">
+  <div class="card h-100 shadow-sm">
+    <img src="images/Shorts.jpg" class="card-img-top" alt="Product 3">
+    <div class="card-body text-center">
+      <h5 class="card-title">Overlord Shorts</h5>
+      <p class="card-text"><strong>RS.699</strong>&nbsp; <del>RS.1,999</del></p>
+      <a href="cart.html" onclick="handleAddToCart('Overlord Shorts', 699)" class="btn btn-outline-dark">Add to Cart</a>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter-section py-5 bg-primary text-white text-center">
+  <div class="container">
+    <h2>Stay Updated!</h2>
+    <p>Subscribe to our newsletter for the latest updates and offers.</p>
+    <form class="row g-2 justify-content-center">
+      <div class="col-auto">
+        <input type="email" class="form-control" placeholder="Enter your email">
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-dark hover">Subscribe</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-4 bg-dark text-white text-center">
+  <div class="container">
+    <p class="mb-0">&copy; 2025 Beta. Images are property of  &copy; GenRage.This site is for educational purposes only.  </p>
+  </div>
+</footer>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function handleAddToCart(name, price) {
+    const product = { name, price, quantity: 1 }; // Initialize quantity to 1
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Check if the product already exists in the cart
+    const existingProductIndex = cart.findIndex((item) => item.name === name);
+    if (existingProductIndex !== -1) {
+      // If the product exists, increase its quantity
+      cart[existingProductIndex].quantity += 1;
+    } else {
+      // If the product is new, add it to the cart
+      cart.push(product);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${name} has been added to your cart!`);
+  }
+</script>
+
+</body>
+</html>
