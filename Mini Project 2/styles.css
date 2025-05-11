@@ -8,6 +8,10 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
 }
 .container {
   background:linear-gradient(to right,rgba(0,0,0,0.8),rgba(0,0,0,0.5)),url('background.jpg');
