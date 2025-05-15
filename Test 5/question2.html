@@ -1,0 +1,30 @@
+comparison opertators<br>
+
+-------------------------------------------------------------------------------------------------
+<br>
+<br>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison Operators</title>
+</head>
+<body>
+    <script>
+        var age=prompt("Enter your age");
+        age=Number(age);
+        if (isNaN(age)) {
+            document.write("Please enter a valid number.");
+        } else if (age < 0) {
+            document.write("Age cannot be negative.");
+        }
+        else if (age < 18 && age > 0) {
+            document.write("You are Not Eligible to vote.");
+        } else if (age >= 18 ) {
+            document.write("You are Eligible to vote.");
+        } else {
+            document.write("Age cannot be zero.");
+        }
+    </script>
+</body>
+</html>
