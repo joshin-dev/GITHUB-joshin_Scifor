@@ -1,0 +1,306 @@
+.booking-container {
+  background: #000;
+  color: #fff;
+  padding: 2rem;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  min-height: 100vh;
+}
+.booking-container .title {
+  color: #e50914;
+  font-size: 3rem;
+  font-weight: 700;
+}
+.booking-container .subtitle {
+  margin: 1rem 0 2rem;
+  font-size: 1.5rem;
+  color: #fff;
+}
+.booking-container .form-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.booking-container .form-section .form-group {
+  position: relative; /* for calendar icon */
+  display: flex;
+  flex-direction: column;
+}
+.booking-container .form-section .form-group label {
+  margin-bottom: 0.5rem;
+  color: #ccc;
+}
+.booking-container .form-section .form-group input[type=date] {
+  padding: 0.5rem;
+  background: #111;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 4px;
+  cursor: pointer;
+  /* Hide the default calendar icon's default color */
+}
+.booking-container .form-section .form-group input[type=date]::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* This inverts the icon color to white */
+}
+.booking-container .form-section .form-group input[type=date]::-moz-calendar-picker-indicator {
+  filter: invert(1);
+}
+.booking-container .form-section .form-group .calendar-icon {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ccc;
+  pointer-events: none;
+  font-size: 1.2rem;
+}
+.booking-container .form-section .form-group .time-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.booking-container .form-section .form-group .time-options .time-btn {
+  padding: 0.5rem 1rem;
+  background: #222;
+  border: 1px solid #444;
+  border-radius: 20px;
+  color: #ccc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.booking-container .form-section .form-group .time-options .time-btn.active, .booking-container .form-section .form-group .time-options .time-btn:hover {
+  background: #e50914;
+  color: #fff;
+  border-color: #e50914;
+}
+.booking-container .seating-section {
+  margin: 3rem auto;
+}
+.booking-container .seating-section .screen-label {
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #aaa;
+}
+.booking-container .seating-section .seat-grid {
+  display: grid;
+  gap: 0.6rem;
+}
+.booking-container .seating-section .seat-grid .seat-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.booking-container .seating-section .seat-grid .seat-btn {
+  width: 35px;
+  height: 35px;
+  background: #ddd;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.booking-container .seating-section .seat-grid .seat-btn.selected {
+  background: #4caf50;
+  color: white;
+}
+.booking-container .seating-section .seat-grid .seat-btn:hover {
+  transform: scale(1.1);
+}
+.booking-container .summary {
+  margin-top: 2rem;
+  text-align: left;
+  max-width: 400px;
+  margin-inline: auto;
+}
+.booking-container .summary h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+.booking-container .summary p {
+  margin-bottom: 0.5rem;
+}
+.booking-container .summary .confirm-btn {
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background: #e50914;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.booking-container .summary .confirm-btn:disabled {
+  background: #444;
+  cursor: not-allowed;
+}
+.booking-container .summary .confirm-btn:not(:disabled):hover {
+  background: #ff0a16;
+}
+.booking-container .movie-details {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  align-items: flex-start;
+}
+.booking-container .movie-details .movie-poster {
+  width: 200px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
+}
+.booking-container .movie-details .movie-info {
+  flex: 1;
+  min-width: 0;
+}
+.booking-container .movie-details .movie-info .movie-title {
+  margin-bottom: 1rem;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+.booking-container .movie-details .movie-info .movie-meta {
+  margin-bottom: 1rem;
+}
+.booking-container .movie-details .movie-info .movie-meta .rating {
+  background-color: #e50914;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-right: 1rem;
+  display: inline-block;
+}
+.booking-container .movie-details .movie-info .movie-meta .duration {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+.booking-container .movie-details .movie-info .movie-overview {
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+.booking-container .movie-details .movie-info .movie-genres,
+.booking-container .movie-details .movie-info .movie-production {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+.booking-container .movie-details .movie-info .movie-genres strong,
+.booking-container .movie-details .movie-info .movie-production strong {
+  color: #fff;
+}
+.booking-container .movie-details .movie-info .movie-genres span,
+.booking-container .movie-details .movie-info .movie-production span {
+  color: #ccc;
+}
+@media (max-width: 435px) {
+  .booking-container {
+    padding: 1rem;
+  }
+  .booking-container .title {
+    font-size: 2rem;
+  }
+  .booking-container .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .booking-container .form-section {
+    gap: 1rem;
+  }
+  .booking-container .form-section .form-group {
+    width: 100%;
+  }
+  .booking-container .form-section .form-group input[type=date] {
+    padding: 0.4rem;
+    padding-right: 2rem;
+    font-size: 0.9rem;
+  }
+  .booking-container .form-section .form-group .time-options {
+    justify-content: center;
+  }
+  .booking-container .form-section .form-group .time-options .time-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  .booking-container .seating-section {
+    margin: 2rem auto;
+  }
+  .booking-container .seating-section .seat-grid {
+    gap: 0.4rem;
+  }
+  .booking-container .seating-section .seat-grid .seat-row {
+    gap: 0.4rem;
+  }
+  .booking-container .seating-section .seat-grid .seat-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.7rem;
+  }
+  .booking-container .summary {
+    max-width: 100%;
+  }
+  .booking-container .summary h3 {
+    font-size: 1.2rem;
+  }
+  .booking-container .summary p {
+    font-size: 0.9rem;
+  }
+  .booking-container .summary .confirm-btn {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 0.6rem 0;
+  }
+  .booking-container .movie-details {
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    align-items: center;
+  }
+  .booking-container .movie-details .movie-poster {
+    width: 100px;
+    height: 150px;
+  }
+  .booking-container .movie-details .movie-info {
+    text-align: center;
+  }
+  .booking-container .movie-details .movie-info .movie-title {
+    font-size: 1.3rem;
+  }
+  .booking-container .movie-details .movie-info .movie-meta .rating {
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    margin-right: 0;
+  }
+  .booking-container .movie-details .movie-info .movie-meta .duration {
+    font-size: 0.75rem;
+    display: block;
+  }
+  .booking-container .movie-details .movie-info .movie-overview {
+    font-size: 0.85rem;
+    text-align: left;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .booking-container .movie-details .movie-info .movie-genres,
+  .booking-container .movie-details .movie-info .movie-production {
+    font-size: 0.8rem;
+    text-align: left;
+  }
+}/*# sourceMappingURL=Booking.css.map */
