@@ -476,19 +476,6 @@ const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY || 'UJR8d
       >
         <h3 className="mb-4 text-center text-light">{isSignup ? 'Sign Up' : 'Login'}</h3>
 
-        {/* EmailJS Configuration Warning */}
-        {(EMAILJS_SERVICE_ID === 'your_service_id' || 
-          EMAILJS_TEMPLATE_ID === 'your_template_id' || 
-          EMAILJS_PUBLIC_KEY === 'your_public_key') && (
-          <div className="alert alert-warning mb-4">
-            <small>
-              <strong>Setup Required:</strong> Configure EmailJS credentials in the component to enable email functionality.
-            </small>
-          </div>
-        )}
-
-       
-
         {/* Custom Google Sign In Button */}
         <div className="mb-4">
           <button
@@ -608,19 +595,6 @@ const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY || 'UJR8d
             {isSignup ? 'Login' : 'Sign Up'}
           </button>
         </motion.p>
-
-        {/* Enhanced Debug info */}
-        <div className="mt-4 p-3 bg-dark rounded">
-          <small className="text-muted">
-            <strong>Debug Info:</strong><br/>
-            Environment: {window.location.hostname}<br/>
-            Registered Users: {getStoredUsers().length}<br/>
-            User Emails: {getStoredUsers().map(u => u.email).join(', ')}<br/>
-            Current User: {localStorage.getItem('user') ? 'Logged in' : 'Not logged in'}<br/>
-            Google Ready: {isGoogleReady ? 'Yes' : 'No'}<br/>
-            EmailJS Ready: {EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && EMAILJS_PUBLIC_KEY ? 'Yes' : 'No'}
-          </small>
-        </div>
       </motion.div>
 
       {/* Forgot Password Modal */}

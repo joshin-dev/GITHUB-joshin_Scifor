@@ -348,7 +348,6 @@ function Navbar() {
                 >
                   <div className="p-3">
                     <div className="text-light mb-2">
-                      <small className="text-muted">Welcome back,</small>
                       <div className="fw-bold">{user.name || user.username || user.email}</div>
                     </div>
                     <hr className="my-2" style={{ borderColor: '#495057' }} />
