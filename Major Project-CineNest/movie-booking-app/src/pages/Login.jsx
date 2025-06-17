@@ -34,9 +34,9 @@ function Login() {
   const googleButtonRef = useRef(null);
 
   // EmailJS Configuration
-  const EMAILJS_SERVICE_ID = VITE_APP_EMAILJS_SERVICE_ID || 'service_z47nqgh'; 
-  const EMAILJS_TEMPLATE_ID = VITE_APP_EMAILJS_TEMPLATE_ID ||'template_0tvgnsd'; 
-  const EMAILJS_PUBLIC_KEY = VITE_APP_EMAILJS__PUBLIC_KEY ||'UJR8duC8-tvOtYfNr'; 
+  const EMAILJS_SERVICE_ID = import.meta.env.VITE_APP_EMAILJS_SERVICE_ID || 'service_z47nqgh';
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID || 'template_0tvgnsd';
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY || 'UJR8duC8-tvOtYfNr';
 
   // Initialize EmailJS
   useEffect(() => {
