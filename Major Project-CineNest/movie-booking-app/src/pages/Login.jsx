@@ -29,12 +29,11 @@ function Login() {
   const [isSendingEmail, setIsSendingEmail] = useState(false);
   const [currentResetCode, setCurrentResetCode] = useState('');
   const [resetEmail, setResetEmail] = useState('');
-  const [debugInfo, setDebugInfo] = useState('');
   const navigate = useNavigate();
   const googleButtonRef = useRef(null);
 
   // EmailJS Configuration
-  const EMAILJS_SERVICE_ID = import.meta.env.VITE_APP_EMAILJS_SERVICE_ID || 'service_z47nqgh';
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_APP_EMAILJS_SERVICE_ID || 'service_z47nqgh';
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID || 'template_0tvgnsd';
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY || 'UJR8duC8-tvOtYfNr';
 
@@ -340,7 +339,6 @@ const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY || 'UJR8d
         console.log('User not found for email:', email);
         console.log('All registered users:', getStoredUsers());
         setForgotPasswordErrors({ email: 'Email not found. Please check if you have registered with this email.' });
-        setDebugInfo(`Email not found: ${email}. Available emails: ${getStoredUsers().map(u => u.email).join(', ')}`);
         return;
       }
 
@@ -364,16 +362,13 @@ const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY || 'UJR8d
           setShowResetForm(true);
           setForgotPasswordData({ email: '' });
           setForgotPasswordErrors({});
-          setDebugInfo('Reset code sent successfully!');
           alert('Reset code sent to your email!');
         } else {
           console.error('EmailJS error:', result.error);
-          setDebugInfo(`EmailJS Error: ${result.error}`);
           alert(`Failed to send reset email: ${result.error}`);
         }
       } catch (error) {
         console.error('Error sending reset email:', error);
-        setDebugInfo(`Error: ${error.message}`);
         alert('Failed to send reset email. Please try again.');
       } finally {
         setIsSendingEmail(false);
@@ -411,7 +406,6 @@ const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY || 'UJR8d
         setResetPasswordErrors({});
         setCurrentResetCode('');
         setResetEmail('');
-        setDebugInfo('Password reset successful!');
       } else {
         alert('Failed to reset password. Please try again.');
       }
@@ -493,18 +487,7 @@ const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY || 'UJR8d
           </div>
         )}
 
-        {/* Debug Information */}
-        {debugInfo && (
-          <div className="alert alert-info mb-4">
-            <small><strong>Debug:</strong> {debugInfo}</small>
-            <button 
-              className="btn btn-sm btn-outline-secondary ms-2"
-              onClick={() => setDebugInfo('')}
-            >
-              Clear
-            </button>
-          </div>
-        )}
+       
 
         {/* Custom Google Sign In Button */}
         <div className="mb-4">
